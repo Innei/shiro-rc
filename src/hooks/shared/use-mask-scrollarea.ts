@@ -3,6 +3,7 @@ import clsx from 'clsx'
 
 import { useViewport } from '~/atoms/hooks/viewport.js'
 
+import styles from '../../styles/rc.module.css'
 import { useEventCallback } from '../common/use-event-callback.js'
 
 const THRESHOLD = 0
@@ -74,11 +75,13 @@ export const useMaskScrollArea = <T extends HTMLElement = HTMLElement>({
   return [
     containerRef,
     canScroll
-      ? clsx(
-          isScrollToBottom && 'mask-t',
-          isScrollToTop && 'mask-b',
-          !isScrollToBottom && !isScrollToTop && 'mask-both',
-        ) + postfixSize
+      ? styles[
+          clsx(
+            isScrollToBottom && 'mask-t',
+            isScrollToTop && 'mask-b',
+            !isScrollToBottom && !isScrollToTop && 'mask-both',
+          ) + postfixSize
+        ]
       : '',
   ] as const
 }

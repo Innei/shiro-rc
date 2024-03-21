@@ -63,7 +63,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <Providers>
                   <div className="flex-1">
                     <Hero />
-                    <div className="m-auto mt-24">
+                    <div className="m-auto mt-24" id="layer">
                       <div
                         className={clsxm(
                           "relative mx-auto grid min-h-[calc(100vh-3rem-10rem)] max-w-full",

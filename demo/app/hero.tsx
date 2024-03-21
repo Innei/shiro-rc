@@ -1,4 +1,6 @@
-import { StyledButton } from "shiro-rc"
+"use client"
+
+import { MLink, StyledButton } from "shiro-rc"
 
 export const Hero = () => {
   return (
@@ -11,12 +13,21 @@ export const Hero = () => {
             built with Radix UI and Tailwind CSS.
           </h1>
           <p className="text-muted-foreground max-w-[700px] text-lg">
-            A demo page.
+            Port from{" "}
+            <MLink href={"https://github.com/Innei/Shiro"}>Shiro</MLink> UI
           </p>
         </div>
       </div>
       <div className="mt-12 flex gap-4">
-        <StyledButton>A button</StyledButton>
+        <StyledButton
+          onClick={() => {
+            document
+              .getElementById("layer")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }}
+        >
+          Link Start
+        </StyledButton>
       </div>
     </section>
   )
