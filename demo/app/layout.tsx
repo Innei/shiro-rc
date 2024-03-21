@@ -51,7 +51,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </head>
         <body
           className={clsx(
-            "bg-background min-h-screen font-sans antialiased",
+            "bg-background min-h-screen font-sans",
             GeistSans.className
           )}
         >
