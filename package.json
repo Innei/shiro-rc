@@ -1,0 +1,110 @@
+{
+  "name": "rc-template",
+  "version": "0.0.3",
+  "description": "TODO",
+  "author": "Innei",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/innei-template/rc-library-template"
+  },
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    },
+    "./src/*": {
+      "import": "./src/*"
+    }
+  },
+  "files": [
+    "dist",
+    "readme.md",
+    "tsconfig.json",
+    "src"
+  ],
+  "publishConfig": {
+    "main": "dist/index.cjs",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+      ".": {
+        "import": "./dist/index.js",
+        "require": "./dist/index.cjs"
+      },
+      "./helper": {
+        "import": "./dist/helper.js",
+        "require": "./dist/helper.cjs"
+      },
+      "./*": [
+        "./*",
+        "./*.d.ts"
+      ]
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --ignore-path ./.prettierignore --write ",
+      "eslint --cache"
+    ]
+  },
+  "bump": {
+    "before": [
+      "npm run build"
+    ],
+    "publish": true,
+    "changelog": true
+  },
+  "scripts": {
+    "prebuild": "rm -rf lib && rm -rf esm",
+    "build": "vite build && tailwindcss -i src/tw.css -o dist/index.css",
+    "prepare": "husky install",
+    "release": "bump"
+  },
+  "devDependencies": {
+    "@innei/bump-version": "1.5.10",
+    "@innei/eslint-config-react-ts": "0.12.4",
+    "@innei/eslint-config-ts": "0.12.4",
+    "@innei/prettier": "0.12.4",
+    "@types/node": "20.11.28",
+    "@types/react": "18.2.66",
+    "@vitejs/plugin-react": "4.2.1",
+    "husky": "9.0.11",
+    "lint-staged": "15.2.2",
+    "postcss": "8.4.35",
+    "postcss-import": "16.0.1",
+    "postcss-nested": "6.0.1",
+    "prettier": "3.2.5",
+    "react": "18.2.0",
+    "rollup-plugin-preserve-directives": "0.4.0",
+    "tailwindcss": "3.4.1",
+    "tslib": "2.6.2",
+    "typescript": "5.4.2",
+    "vite": "5.1.6",
+    "vite-plugin-dts": "3.7.3",
+    "vite-tsconfig-paths": "4.3.2",
+    "vitest": "1.4.0"
+  },
+  "peerDependencies": {
+    "clsx": "*",
+    "tailwind-merge": "^2"
+  },
+  "dependencies": {
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.1"
+  }
+}
