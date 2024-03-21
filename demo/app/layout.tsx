@@ -5,7 +5,7 @@ import { clsxm } from "~/lib/helper"
 import { MobileDetector } from "rc-modal-sheet/mobile-detector"
 import { ModalStackContainer } from "rc-modal-sheet/motion"
 
-import "shiro-ui/dist/style.css"
+import "shiro-rc/dist/style.css"
 import "./index.css"
 
 import type { SVGProps } from "react"

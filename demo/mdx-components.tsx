@@ -1,5 +1,5 @@
 import type { MDXComponents } from "mdx/types"
-import { HighLighter } from "shiro-ui"
+import { HighLighter } from "shiro-rc"
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {

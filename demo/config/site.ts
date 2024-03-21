@@ -7,7 +7,7 @@ export const siteConfig = {
   mainNav: [],
   links: {
     twitter: "https://twitter.com/__oQuery",
-    github: "https://github.com/innei/shiro-ui",
+    github: "https://github.com/innei/shiro-rc",
     docs: "",
   },
 }

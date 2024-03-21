@@ -6,6 +6,6 @@ export default {
   content: [
     "./app/**/*.{js,jsx,ts,tsx}",
     "./components/**/*.{js,jsx,ts,tsx}",
-    "./node_modules/shiro-ui/src/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/shiro-rc/src/**/*.{js,jsx,ts,tsx}",
   ],
 }

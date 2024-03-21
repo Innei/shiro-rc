@@ -1,4 +1,4 @@
-import { StyledButton } from "shiro-ui"
+import { StyledButton } from "shiro-rc"
 
 export const Hero = () => {
   return (
