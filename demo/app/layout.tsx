@@ -5,15 +5,13 @@ import { clsxm } from "~/lib/helper"
 import { MobileDetector } from "rc-modal-sheet/mobile-detector"
 import { ModalStackContainer } from "rc-modal-sheet/motion"
 
+import "shiro-ui/dist/style.css"
 import "./index.css"
 
 import type { SVGProps } from "react"
-import Script from "next/script"
 import clsx from "clsx"
-import { m } from "framer-motion"
 import { GeistSans } from "geist/font/sans"
 import { PresentSheet } from "rc-modal-sheet"
-import { Configure } from "shiro-ui"
 
 import { siteConfig } from "@/config/site"
 import { LeftAside } from "@/components/layout/sidebar"

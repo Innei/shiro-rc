@@ -1,10 +1,5 @@
 import type { MDXComponents } from "mdx/types"
-import { getHighlighter } from "shiki"
-
-const highlighter = await getHighlighter({
-  themes: ["github-dark"],
-  langs: ["javascript", "typescript", "json", "jsx", "tsx", "shell"],
-})
+import { HighLighter } from "shiro-ui"
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -14,17 +9,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         (props.children as any).props.className?.replace(/language-/, "") ||
         "text"
 
-      const rawCode = (props.children as any).props.children
-      return (
-        <div
-          dangerouslySetInnerHTML={{
-            __html: highlighter.codeToHtml(rawCode, {
-              lang: language,
-              theme: "github-dark",
-            }),
-          }}
-        ></div>
-      )
+      const rawCode = (props.children as any).props.children.trim()
+
+      return <HighLighter content={rawCode} lang={language} />
     },
   }
 }

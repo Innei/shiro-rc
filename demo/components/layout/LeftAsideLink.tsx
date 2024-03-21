@@ -12,9 +12,9 @@ export const LeftAsideLink = memo(
     return (
       <span
         className={clsxm(
-          "font-medium opacity-40 duration-200 hover:opacity-90 text-black dark:text-white",
+          "font-medium duration-200 hover:opacity-90",
 
-          pathname === path && "opacity-100"
+          pathname === path && "text-accent"
         )}
         key={path}
       >

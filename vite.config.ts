@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'fs'
+import { readFileSync } from 'fs'
 import { resolve } from 'path'
 import react from '@vitejs/plugin-react'
 import { preserveDirectives } from 'rollup-plugin-preserve-directives'
@@ -18,9 +18,9 @@ export default defineConfig({
     react(),
     dts({
       // outDir: 'dist/src',
-      // rollupTypes: true,
+      rollupTypes: true,
       beforeWriteFile: (filePath, content) => {
-        writeFileSync(filePath.replace('.d.ts', '.d.cts'), content)
+        // writeFileSync(filePath.replace('.d.ts', '.d.cts'), content)
         return { filePath, content }
       },
     }),
@@ -47,6 +47,9 @@ export default defineConfig({
         'lodash-es',
         'react/jsx-runtime',
         ...Object.keys(globals),
+        /^@shiki/,
+        /^shiki/,
+        /^jotai/,
       ],
       output: {
         preserveModules: true,
