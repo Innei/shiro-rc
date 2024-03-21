@@ -12,7 +12,7 @@ export const Hero = () => {
             <br className="hidden sm:inline" />
             built with Radix UI and Tailwind CSS.
           </h1>
-          <p className="max-w-[700px] text-lg text-base-200">
+          <p className="max-w-[700px] text-lg text-base-100">
             Port from <MLink href="https://github.com/Innei/Shiro">Shiro</MLink>{" "}
             UI
           </p>

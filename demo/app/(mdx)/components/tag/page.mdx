@@ -1,0 +1,42 @@
+---
+order: 10
+---
+
+# Tag
+
+## Base
+
+import { Tag } from "shiro-rc"
+
+<Tag count={2} text={"Tech"} />
+<Tag text={"React"} />
+<Tag text={"Vue"} />
+
+```tsx
+import { Tag } from "shiro-rc"
+
+<Tag count={2} text={"Tech"} />
+<Tag text={"React"} />
+<Tag text={"Vue"} />
+```
+
+## Button
+
+import { App } from "./demo.tsx"
+
+<App />
+
+```tsx
+import { Tag } from "shiro-rc"
+
+export const App = () => {
+  return (
+    <Tag
+      onClick={() => {
+        window.open("https://innei.in")
+      }}
+      text="My Site"
+    />
+  )
+}
+```
