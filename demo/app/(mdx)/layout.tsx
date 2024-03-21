@@ -8,6 +8,6 @@ import { Highlighter } from "./highlighter"
 export default ({ children }: PropsWithChildren) => (
   <>
     <div className="prose dark:prose-invert">{children}</div>
-    <Highlighter />
+    {/* <Highlighter /> */}
   </>
 )

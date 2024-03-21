@@ -1,4 +1,4 @@
-import { Button, buttonVariants } from "@/components/ui/button"
+import { StyledButton } from "shiro-ui"
 
 export const Hero = () => {
   return (
@@ -16,7 +16,7 @@ export const Hero = () => {
         </div>
       </div>
       <div className="mt-12 flex gap-4">
-        <Button className={buttonVariants()}>A button</Button>
+        <StyledButton>A button</StyledButton>
       </div>
     </section>
   )

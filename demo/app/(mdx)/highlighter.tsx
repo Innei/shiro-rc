@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useLayoutEffect } from "react"
-import { Pirata_One } from "next/font/google"
 import { usePathname } from "next/navigation"
 
 export const Highlighter = () => {

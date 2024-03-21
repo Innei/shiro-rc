@@ -17,6 +17,7 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
+      // outDir: 'dist/src',
       // rollupTypes: true,
       beforeWriteFile: (filePath, content) => {
         writeFileSync(filePath.replace('.d.ts', '.d.cts'), content)
