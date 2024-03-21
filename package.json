@@ -56,7 +56,6 @@
     "changelog": true
   },
   "scripts": {
-    "prebuild": "rm -rf lib && rm -rf esm",
     "build": "vite build && tailwindcss -i src/tw.css -o dist/index.css",
     "prepare": "husky install",
     "release": "bump",

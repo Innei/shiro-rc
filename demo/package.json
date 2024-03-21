@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "private": true,
   "scripts": {
+    "postinstall": "cd .. && npm run build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
