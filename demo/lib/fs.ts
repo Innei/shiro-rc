@@ -26,7 +26,7 @@ export const buildFsTree = () => {
   // [ './guide/install/page.mdx', 'app/(mdx)/guide/install/page.mdx' ]
 
   const tree = [] as Tree[]
-  for (let filePath of filePaths) {
+  for (const filePath of filePaths) {
     const path = filePath
       .split("/")
       .slice(1, -1)
