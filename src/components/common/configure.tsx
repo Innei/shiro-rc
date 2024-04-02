@@ -9,17 +9,17 @@ import { MotionComponentContext } from '~/providers/motion.js'
 
 interface ConfigureProps {
   m: typeof m | typeof motion
-  isDark?: boolean
+  darkMode?: boolean
 }
 export const Configure: FC<PropsWithChildren & ConfigureProps> = ({
   children,
   ...configure
 }) => {
-  const { m, isDark } = configure
+  const { m, darkMode } = configure
   return (
     // keep the context value stable
     <MotionComponentContext.Provider value={useMemo(() => ({ m }), [])}>
-      <IsDarkContext.Provider value={isDark || false}>
+      <IsDarkContext.Provider value={darkMode || false}>
         {children}
       </IsDarkContext.Provider>
     </MotionComponentContext.Provider>

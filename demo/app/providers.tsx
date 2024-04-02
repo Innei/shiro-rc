@@ -13,7 +13,7 @@ export const Providers = ({ children }: PropsWithChildren) => {
   return (
     <Configure
       m={m}
-      isDark={
+      darkMode={
         theme === "dark" || (theme === "system" && systemTheme === "dark")
       }
     >
