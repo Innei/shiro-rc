@@ -1,6 +1,7 @@
 'use client'
 
 import { forwardRef, useCallback, useState } from 'react'
+import clsx from 'clsx'
 import { m, useMotionTemplate, useMotionValue } from 'framer-motion'
 import type {
   DetailedHTMLProps,
@@ -8,9 +9,18 @@ import type {
   TextareaHTMLAttributes,
 } from 'react'
 
+import { clsxm } from '~/helper.js'
 import { useInputComposition } from '~/hooks/common/use-input-composition.js'
-import { clsxm } from '~/lib/helper.js'
 
+const roundedMap = {
+  sm: 'rounded-sm',
+  md: 'rounded-md',
+  lg: 'rounded-lg',
+  xl: 'rounded-xl',
+  '2xl': 'rounded-2xl',
+  '3xl': 'rounded-3xl',
+  default: 'rounded',
+}
 export const TextArea = forwardRef<
   HTMLTextAreaElement,
   DetailedHTMLProps<
@@ -19,9 +29,19 @@ export const TextArea = forwardRef<
   > &
     PropsWithChildren<{
       wrapperClassName?: string
+      onCmdEnter?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void
+      rounded?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'default'
+      bordered?: boolean
     }>
 >((props, ref) => {
-  const { className, wrapperClassName, children, ...rest } = props
+  const {
+    className,
+    wrapperClassName,
+    children,
+    rounded = 'xl',
+    bordered = true,
+    ...rest
+  } = props
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
   const handleMouseMove = useCallback(
@@ -39,28 +59,43 @@ export const TextArea = forwardRef<
   return (
     <div
       className={clsxm(
-        'group relative h-full overflow-hidden rounded-xl border ring-accent/20 duration-200 [--spotlight-color:oklch(var(--a)_/_0.12)]',
+        'group relative h-full border ring-0 ring-accent/20 duration-200 [--spotlight-color:oklch(var(--a)_/_0.12)]',
+        roundedMap[rounded],
 
-        'border-zinc-900/10 dark:border-zinc-700',
+        'border-transparent',
         isFocus && 'border-accent/80 ring-2',
-        'dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500',
+        // 'bg-gray-200/50 dark:bg-zinc-800/50',
+        'dark:text-zinc-200 dark:placeholder:text-zinc-500',
         wrapperClassName,
       )}
       onMouseMove={handleMouseMove}
     >
       <m.div
-        className="pointer-events-none absolute bottom-0 left-0 right-0 top-0 z-0 rounded-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        className={clsx(
+          'pointer-events-none absolute inset-0 z-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100',
+          roundedMap[rounded],
+        )}
         style={{ background }}
         aria-hidden="true"
       />
 
+      {bordered && (
+        <div
+          className={clsx(
+            'border-border pointer-events-none absolute inset-0 z-0 border',
+            roundedMap[rounded],
+          )}
+          aria-hidden="true"
+        />
+      )}
       <textarea
         ref={ref}
         className={clsxm(
-          'h-full w-full resize-none bg-transparent',
+          'size-full resize-none bg-transparent',
           'overflow-auto px-3 py-4',
           '!outline-none',
           'text-neutral-900/80 dark:text-slate-100/80',
+          roundedMap[rounded],
           className,
         )}
         {...rest}
@@ -73,6 +108,13 @@ export const TextArea = forwardRef<
           rest.onBlur?.(e)
         }}
         {...inputProps}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
+            props.onCmdEnter?.(e)
+          }
+          rest.onKeyDown?.(e)
+          inputProps.onKeyDown?.(e)
+        }}
       />
 
       {children}

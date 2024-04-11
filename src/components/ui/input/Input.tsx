@@ -1,10 +1,8 @@
-'use client'
-
 import { forwardRef } from 'react'
 import type { DetailedHTMLProps, InputHTMLAttributes } from 'react'
 
+import { clsxm } from '~/helper.js'
 import { useInputComposition } from '~/hooks/common/use-input-composition.js'
-import { clsxm } from '~/lib/helper.js'
 
 // This composition handler is not perfect
 // @see https://foxact.skk.moe/use-composition-input
@@ -20,11 +18,13 @@ export const Input = forwardRef<
     <input
       ref={ref}
       className={clsxm(
-        'min-w-0 flex-auto appearance-none rounded-lg border ring-accent/20 duration-200 sm:text-sm',
-        'bg-base-100 px-3 py-[calc(theme(spacing.2)-1px)] placeholder:text-zinc-400 focus:outline-none focus:ring-2',
-        'border-zinc-900/10 dark:border-zinc-700',
-        'focus:border-accent/80 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500',
-        props.type === 'password' ? 'font-mono' : 'font-[system-ui]',
+        'min-w-0 flex-auto appearance-none rounded-lg border ring-accent/20 duration-200 sm:text-sm lg:text-base',
+        'bg-base-100 px-3 py-[calc(theme(spacing.2)-1px)] placeholder:text-zinc-400 focus:outline-none focus:ring-2 dark:bg-zinc-700/[0.15]',
+        'border-border',
+        'focus:border-accent/80 dark:text-zinc-200 dark:placeholder:text-zinc-500',
+        props.type === 'password'
+          ? 'font-mono placeholder:font-sans'
+          : 'font-[system-ui]',
         className,
       )}
       {...props}

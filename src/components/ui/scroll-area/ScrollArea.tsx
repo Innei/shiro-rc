@@ -1,3 +1,5 @@
+/* eslint-disable tailwindcss/enforces-negative-arbitrary-values */
+/* eslint-disable tailwindcss/no-unnecessary-arbitrary-value */
 'use client'
 
 import * as ScrollAreaBase from '@radix-ui/react-scroll-area'
@@ -76,7 +78,7 @@ export const Viewport = React.forwardRef<
     <ScrollAreaBase.Viewport
       {...rest}
       ref={ref}
-      className={clsxm('block h-full w-full', maskClassName, className)}
+      className={clsxm('block size-full', maskClassName, className)}
     />
   )
 })

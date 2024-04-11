@@ -15,6 +15,7 @@ export const useViewport = <T>(
       viewportAtom,
       useCallback((atomValue) => selector(atomValue), []),
     ),
+    { store: jotaiStore },
   )
 
 export const useIsMobile = () =>

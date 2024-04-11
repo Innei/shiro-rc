@@ -23,6 +23,14 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./dist/tw.css": {
+      "import": "./dist/tw.css",
+      "require": "./dist/tw.css"
+    },
+    "./dist/index.css": {
+      "import": "./dist/index.css",
+      "require": "./dist/index.css"
+    },
     "./*": [
       "./*",
       "./*.d.ts"
@@ -56,7 +64,7 @@
     "changelog": true
   },
   "scripts": {
-    "build": "vite build && tailwindcss -i src/tw.css -o dist/index.css",
+    "build": "vite build && tailwindcss -i src/tw.css -o dist/index.css && cp src/tw-extend.css dist/tw.css",
     "prepare": "husky install",
     "release": "bump",
     "dev": "vite build --watch"
@@ -77,6 +85,7 @@
     "lint-staged": "15.2.2",
     "postcss": "8.4.35",
     "postcss-import": "16.0.1",
+    "postcss-js": "4.0.1",
     "postcss-nested": "6.0.1",
     "prettier": "3.2.5",
     "react": "18.2.0",
