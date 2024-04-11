@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.0.6](https://github.com/innei/shiro-rc/compare/v0.0.5...v0.0.6) (2024-04-11)
+
+
+
 ## [0.0.5](https://github.com/innei/shiro-rc/compare/v0.0.4...v0.0.5) (2024-04-02)
 
 
