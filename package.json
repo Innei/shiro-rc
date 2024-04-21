@@ -101,6 +101,7 @@
   "dependencies": {
     "@floating-ui/react-dom": "2.0.8",
     "@radix-ui/react-scroll-area": "1.0.5",
+    "@radix-ui/react-select": "2.0.0",
     "@shikijs/transformers": "1.2.0",
     "clsx": "^2.1.0",
     "daisyui": "4.7.2",
