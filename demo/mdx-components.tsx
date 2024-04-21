@@ -1,5 +1,6 @@
 import type { MDXComponents } from "mdx/types"
-import { HighLighter } from "shiro-rc"
+
+import { ShikiHighLighter } from "../dist"
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -11,7 +12,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
       const rawCode = (props.children as any).props.children.trim()
 
-      return <HighLighter content={rawCode} lang={language} />
+      return <ShikiHighLighter content={rawCode} lang={language} />
     },
   }
 }

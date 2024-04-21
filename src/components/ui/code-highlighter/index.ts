@@ -1,1 +1,1 @@
-export * from './CodeHighlighter.js'
+export * from './shiki/Shiki.js'

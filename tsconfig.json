@@ -21,7 +21,8 @@
     "sourceMap": true,
     "types": [
       "vite/client",
-      "vitest/globals"
+      "vitest/globals",
+      "react/canary"
     ],
     "paths": {
       "~/*": [

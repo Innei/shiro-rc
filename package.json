@@ -12,8 +12,7 @@
   "files": [
     "dist",
     "readme.md",
-    "tsconfig.json",
-    "src"
+    "tsconfig.json"
   ],
   "main": "dist/index.cjs",
   "module": "dist/index.js",

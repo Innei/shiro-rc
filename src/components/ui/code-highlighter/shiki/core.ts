@@ -1,9 +1,6 @@
-import type {
-  BundledLanguage,
-  BundledTheme,
-  CodeToHastOptions,
-  HighlighterCore,
-} from 'shiki'
+import type { BundledLanguage } from 'shiki/langs'
+import type { BundledTheme } from 'shiki/themes'
+import type { CodeToHastOptions, HighlighterCore } from 'shiki/types.mjs'
 
 import {
   transformerMetaHighlight,
