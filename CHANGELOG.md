@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## [0.0.7](https://github.com/innei/shiro-rc/compare/v0.0.6...v0.0.7) (2024-04-21)
+
+
+### Bug Fixes
+
+* update ([0d3c706](https://github.com/innei/shiro-rc/commit/0d3c706411f3dac58bcadef6fab364f1709720f1))
+
+
+
 ## [0.0.6](https://github.com/innei/shiro-rc/compare/v0.0.5...v0.0.6) (2024-04-11)
 
 
