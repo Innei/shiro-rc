@@ -53,7 +53,7 @@ export const Providers = ({ children }: PropsWithChildren) => {
 
 ```tsx
 // app/layout.tsx
-import './shiro-rc/dist/tw.css'
+import 'shiro-rc/dist/tw.css'
 ```
 
 In your `tailwind.config.js`:
