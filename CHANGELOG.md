@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## [0.0.9](https://github.com/innei/shiro-rc/compare/v0.0.8...v0.0.9) (2024-04-21)
+
+
+### Features
+
+* add select ([9141598](https://github.com/innei/shiro-rc/commit/9141598dc1b60f67e1a0ac57e64392899fead79c))
+
+
+
 ## [0.0.8](https://github.com/innei/shiro-rc/compare/v0.0.7...v0.0.8) (2024-04-21)
 
 
