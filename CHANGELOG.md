@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## [0.0.10](https://github.com/innei/shiro-rc/compare/v0.0.9...v0.0.10) (2024-04-27)
+
+
+### Bug Fixes
+
+* forward button ref ([c26c8e1](https://github.com/innei/shiro-rc/commit/c26c8e1cb21215bcc4c9bb0d0c4e452b1d8f498c))
+
+
+
 ## [0.0.9](https://github.com/innei/shiro-rc/compare/v0.0.8...v0.0.9) (2024-04-21)
 
 
